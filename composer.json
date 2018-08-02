@@ -1,0 +1,26 @@
+{
+    "name": "tinymeng/think-worker",
+    "description": "workerman's websocket extend for thinkphp5",
+    "keywords": [
+        "thinkphp", "tinymeng", "workerman", "http", "server","think-worker"
+    ],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "JiaMeng Ma",
+            "email": "666@majiameng.com",
+            "homepage": "https://www.majiameng.com"
+        }
+    ],
+    "require": {
+        "workerman/workerman": "^3.5",
+        "workerman/gateway-worker": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "tinymeng\\worker\\": "src"
+        },
+        "files": [
+        ]
+    }
+}
