@@ -2,7 +2,7 @@ Workerman websocket 扩展
 ===============
 
 ## 安装
-composer require tinymeng/think-worker dev-master
+composer require tinymeng/worker-socket dev-master
 
 ## 使用方法
 

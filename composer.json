@@ -1,8 +1,8 @@
 {
-    "name": "tinymeng/think-worker",
-    "description": "workerman's websocket extend for thinkphp5",
+    "name": "tinymeng/worker-socket",
+    "description": "Easy to use workerman's websocket",
     "keywords": [
-        "thinkphp", "tinymeng", "workerman", "http", "server","think-worker"
+        "tinymeng", "workerman","worker-socket"
     ],
     "license": "Apache-2.0",
     "authors": [
