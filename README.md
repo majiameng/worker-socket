@@ -4,6 +4,8 @@ Workerman websocket 扩展
 ## 安装
 composer require tinymeng/worker-socket dev-master
 
+## worker-socket 已集成thinkphp、larverl、yii框架使用
+
 ## 使用方法
 
 #### 在项目<code> /application/index/controller </code>下创建文件Events.php
@@ -112,6 +114,25 @@ $kernel = $app->make(App\Http\Controllers\EventsController::class);//Events类�
 
 ~~~
 
+##### Yii框架示例如下：
+~~~
+#!/usr/bin/env php
+<?php
+/**
+ * worker-socket command start file.
+ */
+defined('YII_DEBUG') or define('YII_DEBUG', true);
+defined('YII_ENV') or define('YII_ENV', 'dev');
+
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/vendor/yiisoft/yii2/Yii.php';
+
+$config = [
+    'class' => 'backend\controllers\EventController',//Events类，根据自己的命名规范填写
+];
+$modifyPassword = Yii::createObject($config);
+~~~
+
 
 ##### 在命令行启动服务端 <code> php socket.php start </code>
 
@@ -136,6 +157,11 @@ linux下面可以支持下面指令
 ~~~
 php socket.php start|stop|status|restart|reload
 ~~~
+
+需要后台运行的话
+```angular2html
+php socket.php start -d
+```
 
 #### 测试
 
