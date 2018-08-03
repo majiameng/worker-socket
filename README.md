@@ -1,18 +1,18 @@
 Workerman websocket 扩展
 ===============
 
-## 安装
+## 1.安装
 composer require tinymeng/worker-socket dev-master
 
-## worker-socket 已集成thinkphp、larverl、yii框架使用
+> worker-socket 已集成thinkphp、larverl、yii框架使用
 
-## 使用方法
+## 2.业务逻辑
 
 #### 在项目<code> /application/index/controller </code>下创建文件Events.php
 
 > 首先创建控制器类并继承 tinymeng\worker\Server，然后设置属性和添加回调方法
 
-##### ThinkPhp框架示例如下：
+##### 2.1 ThinkPhp框架示例如下：
 ~~~
 <?php
 /**
@@ -70,11 +70,11 @@ class Events extends Server{
 > 支持workerman所有的回调方法定义（回调方法必须是public static类型）
 
 
-#### 启动文件
+## 3.启动项目
 
 在应用根目录增加入口文件 socket.php
 
-##### ThinkPhp框架示例如下：
+##### 3.1.1 ThinkPhp框架示例如下：
 ~~~
 #!/usr/bin/env php
 <?php
@@ -93,7 +93,7 @@ define('BIND_MODULE','index/Events');
 require __DIR__ . '/thinkphp/start.php';
 ~~~
 
-##### Laravel框架示例如下：
+##### 3.1.2 Laravel框架示例如下：
 ~~~
 #!/usr/bin/env php
 <?php
@@ -114,7 +114,7 @@ $kernel = $app->make(App\Http\Controllers\EventsController::class);//Events类�
 
 ~~~
 
-##### Yii框架示例如下：
+##### 3.1.3 Yii框架示例如下：
 ~~~
 #!/usr/bin/env php
 <?php
@@ -134,7 +134,7 @@ $modifyPassword = Yii::createObject($config);
 ~~~
 
 
-##### 在命令行启动服务端 <code> php socket.php start </code>
+##### 3.2 在命令行启动服务端 <code> php socket.php start </code>
 
 ```liunx
 
@@ -153,17 +153,17 @@ Press Ctrl+C to stop. Start success.
 
 ```
 
-linux下面可以支持下面指令
+##### linux下面可以支持下面指令
 ~~~
 php socket.php start|stop|status|restart|reload
 ~~~
 
-需要后台运行的话
-```angular2html
+##### 需要后台运行的话
+```php
 php socket.php start -d
 ```
 
-#### 测试
+## 4.测试
 
 在浏览器中进行客户端测试
 
