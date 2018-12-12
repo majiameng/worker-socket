@@ -6,13 +6,14 @@ composer require tinymeng/worker-socket dev-master
 
 > worker-socket 已集成thinkphp、larverl、yii框架使用
 
-## 2.业务逻辑
+## 2.业务逻辑(Events类)
 
-#### 在项目<code> /application/index/controller </code>下创建文件Events.php
+#### 在项目<code> /application/index/controller </code>下创建文件Events类 `Events.php`
 
 > 首先创建控制器类并继承 tinymeng\worker\Server，然后设置属性和添加回调方法
 
 ##### 2.1 ThinkPhp框架示例如下：
+
 ~~~
 <?php
 /**
@@ -87,6 +88,7 @@ class Events extends Server{
 
 define('APP_PATH', __DIR__ . '/application/');
 
+/** Events类，根据自己的模块和控制器填写 */
 define('BIND_MODULE','index/Events');
 
 // 加载框架引导文件
@@ -110,7 +112,8 @@ require __DIR__.'/vendor/autoload.php';
 
 $app = require_once __DIR__.'/bootstrap/app.php';
 
-$kernel = $app->make(App\Http\Controllers\EventsController::class);//Events类，根据自己的命名规范填写
+/** Events类，根据自己的命名规范填写 */
+$kernel = $app->make(App\Http\Controllers\EventsController::class);
 
 ~~~
 
@@ -119,7 +122,7 @@ $kernel = $app->make(App\Http\Controllers\EventsController::class);//Events类�
 #!/usr/bin/env php
 <?php
 /**
- * worker-socket command start file.
+ * worker-socket command socket file.
  */
 defined('YII_DEBUG') or define('YII_DEBUG', true);
 defined('YII_ENV') or define('YII_ENV', 'dev');
@@ -128,7 +131,8 @@ require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/vendor/yiisoft/yii2/Yii.php';
 
 $config = [
-    'class' => 'backend\controllers\EventController',//Events类，根据自己的命名规范填写
+    /** Events类，根据自己的命名规范填写 */
+    'class' => 'backend\controllers\EventController',
 ];
 $modifyPassword = Yii::createObject($config);
 ~~~
@@ -170,3 +174,8 @@ php socket.php start -d
 > http://www.blue-zero.com/WebSocket/
 
 输入socket地址  ws://IP:1314 测试socket服务是否正常
+
+
+> 网站事例：  [打开](https://www.majiameng.com/) (需要登录哦!)
+
+> 大家如果有问题要交流，就发在这里吧：  [worke-socket 交流](https://github.com/majiameng/worker-socket/issues/1) 或发邮件 666@majiameng.com
