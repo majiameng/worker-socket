@@ -179,12 +179,12 @@ Press Ctrl+C to stop. Start success.
 ```
 
 ##### linux下面可以支持下面指令
-~~~
+```liunx
 php socket.php start|stop|status|restart|reload
-~~~
+```
 
 ##### 需要后台运行的话
-```php
+```liunx
 php socket.php start -d
 ```
 
