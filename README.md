@@ -2,9 +2,30 @@ Workerman websocket 扩展
 ===============
 
 ## 1.安装
-composer require tinymeng/worker-socket dev-master
+> composer require tinymeng/worker-socket:~1.0.0  -vvv
 
+### 目录结构
 > worker-socket 已集成thinkphp、larverl、yii框架使用
+
+```
+.
+├── example                          实例代码源文件目录
+│   ├── laravel
+│   │   ├── EventsController.php   回调事件处理实例
+│   │   └── socket.php             socket启动文件
+│   ├── thinkphp
+│   │   ├── Events.php             回调事件处理实例
+│   │   └── socket.php             socket启动文件
+│   └── yii
+│        ├── EventsController.php   回调事件处理实例
+│        └── socket.php             socket启动文件
+├── src                              代码源文件目录
+│   └── Server.php                  封装服务基础类
+├── composer.json                    composer文件
+├── LICENSE                          MIT License
+└── README.md                        说明文件
+```
+
 
 ## 2.业务逻辑(Events类)
 
