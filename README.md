@@ -2,7 +2,7 @@ Workerman websocket 扩展
 ===============
 
 ## 1.安装
-> composer require tinymeng/worker-socket:~1.0.0  -vvv
+> composer require tinymeng/worker-socket:~1.0.1  -vvv
 
 ### 目录结构
 > worker-socket 已集成thinkphp、larverl、yii框架使用
