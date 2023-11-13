@@ -192,6 +192,8 @@ php socket.php start -d
 
 在浏览器中进行客户端测试
 
+> http://tools.bjwmsc.com/websocket/
+
 > http://www.blue-zero.com/WebSocket/
 
 输入socket地址  ws://IP:1314 测试socket服务是否正常
